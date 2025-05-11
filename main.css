@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo&display=swap');
+
+
+:root {
+    --espresso: #3d2719;
+    --CREAM: #dad7cd;
+    --CAMEL: #523726;
+    --BROWN: #523726;
+    --HORCHATA: #b99883;
+    --white: #FFFFFF;
+    --black: #000000;
+    --bluegray: #8293AE;
+    --green: #65755F;
+
+  }
+  
+ h1 { 
+  background: var(--bg);
+  color: var(--fontColor);
+  font-family: Tahoma, Verdana, Segoe, sans-serif; 
+  font-size: 24px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  line-height: 26.4px; }
+  
+  h2 {
+    background: var(--bg);
+    color: var(--fontColor);
+    font-family: "DM Serif Text", serif;    
+    font-weight: 100;
+    font-style: normal; 
+    font-size: 40px; 
+    font-variant: normal; 
+     }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  .workbox{
+    text-align: center;
+    background-color: none;
+    width:20%;
+    border: 5px solid var(--CAMEL);
+    padding: 200px;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fontColor);
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: auto;
+    font-style: normal;
+    font-size: 20px;
+  }
+
+
+  a:link {color: var(--HORCHATA);}
+  a:visited {color: var(--HORCHATA);}
+
+    li {
+     list-style: none;
+    }
+  
+    .list {
+      list-style: square;
+    }
+    
+    .light-theme {
+      --bg:var(--CREAM);
+      --fontColor: var(--espresso);
+      --btnBg: var(--espresso);
+      --btnFontColor: var(--CREAM)
+    }
+    
+    .dark-theme {
+      --bg: var(--espresso);
+      --fontColor: var(--CREAM);
+      --btnBg: var(--CREAM);
+      --btnFontColor: var(--espresso);
+    }
+    .btn {
+      position: absolute;
+      font-family: "DM Serif Text", serif;    
+      font-size: 14px;
+      top: 40px;
+      left: 450px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: none;
+      color: var(--btnFontColor);
+      background-color: var(--btnBg);
+    }
+    .btn:hover {
+      background-color: var(--CAMEL);
+      color: var(--CREAM);
+    }   
+        
+        .topnav {
+          overflow: hidden;
+          background-color: var(--espresso);
+        }
+        
+        .topnav a {
+          float: left;
+          color: var(--CREAM);
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-family: "DM Serif Text", serif;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+            background-color: var(--CAMEL);
+            color: var(--CREAM);
+        }
+        
+        .topnav a.active {
+          background-color: var(--CAMEL);
+          color: var(--CREAM);
+        }
+        
+        .row {
+          display: flex;
+        }
+        
+        .column {
+          flex: 100%;
+        }
+
+/* Style the footer */
+.footer {
+  background-color:  var(--CAMEL);
+  padding: 10px;
+  text-align: center;
+}
+
+/*work page split screen*/
+.split {
+  height: 40%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: var(--bg);
+}
+
+.right {
+  right: 0;
+  background-color: var(--bg);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.box {
+  width: 49%;
+  height: 60%;
+  border: none;
+  margin: 1px;
+  display: inline-block; 
+  text-align: center;
+  vertical-align: middle;
+  line-height: 200px; 
+}
+.box:hover {
+  fill-opacity: var(--HORCHATA);
+  color: burlywood;
+}
+ 
+  a:hover {
+    text-decoration: underline;
+    color: var(--fontColor); 
+    }
+  
