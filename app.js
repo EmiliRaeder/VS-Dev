@@ -1,4 +1,5 @@
-'use strict';
+// This is a simple JavaScript code to toggle between light and dark themes
+// when a button is clicked. It uses the classList API to add or remove classes;
 
 const switcher = document.querySelector('.btn');
 
