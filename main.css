@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo&display=swap');
 
-
+/* =================================
+   GLOBAL STYLES
+=================================== */
 :root {
     --espresso: #3d2719;
     --CREAM: #dad7cd;
@@ -30,190 +32,265 @@
     font-family: "DM Serif Text", serif;    
     font-weight: 100;
     font-style: normal; 
-    font-size: 40px; 
+    font-size: 60px; 
     font-variant: normal; 
-     }
+    }
 
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-
-  .workbox{
-    text-align: center;
-    background-color: none;
-    width:20%;
-    border: 5px solid var(--CAMEL);
-    padding: 200px;
-  }
-  body {
+ body {
     background: var(--bg);
     color: var(--fontColor);
     font-family: "Nanum Myeongjo", serif;
     font-weight: auto;
     font-style: normal;
     font-size: 20px;
+   }
+   
+ footer {
+    background-color:  var(--CAMEL);
+    padding: 10px;
+    text-align: center;
   }
 
+  li {
+    list-style: none;
+  }
+
+  .list {
+    list-style: square;
+  }  
+        
+  .topnav {
+    overflow: hidden;
+    background-color: var(--espresso);
+  }
+  
+  .topnav a {
+    float: left;
+    color: #dad7cd;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-family: "DM Serif Text", serif;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+      background-color: var(--CAMEL);
+      color: var(--CREAM);
+  }
+  
+  .topnav a.active {
+    background-color: var(--CAMEL);
+    color: var(--CREAM);
+  }
+/* =================================
+   DARK VS. LIGHT MODE
+=================================== */
+.light-theme {
+  --bg:var(--CREAM);
+  --fontColor: var(--espresso);
+  --btnBg: var(--espresso);
+  --btnFontColor: var(--CREAM);
+  --wrkcircle: var(--espresso);
+  --wrkcrc-hover: var(--CAMEL);
+}
+.dark-theme {
+  --bg: var(--espresso);
+  --fontColor: var(--CREAM);
+  --btnBg: var(--CREAM);
+  --btnFontColor: var(--espresso);
+  --wrkcircle: var(--CAMEL);
+  --wrkcrc-hover: var(--CAMEL);
+}
+.btn {
+  position: absolute;
+  font-family: "DM Serif Text", serif;    
+  font-size: 14px;
+  top: 40px;
+  left: 450px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+}
+.btn:hover {
+  background-color: var(--CAMEL);
+  color: var(--CREAM);
+}   
+ /* =================================
+   GLOBAL STYLES
+=================================== */
+
+   img {
+    max-width: 100%;
+    height: auto;
+   }
+
+  .workbox {
+    text-align: center;
+    background-color: none;
+    width:20%;
+    border: 5px solid var(--CAMEL);
+    padding: 200px;
+  }
 
   a:link {color: var(--HORCHATA);}
   a:visited {color: var(--HORCHATA);}
 
-    li {
-     list-style: none;
-    }
-  
-    .list {
-      list-style: square;
-    }
-    
-    .light-theme {
-      --bg:var(--CREAM);
-      --fontColor: var(--espresso);
-      --btnBg: var(--espresso);
-      --btnFontColor: var(--CREAM)
-    }
-    
-    .dark-theme {
-      --bg: var(--espresso);
-      --fontColor: var(--CREAM);
-      --btnBg: var(--CREAM);
-      --btnFontColor: var(--espresso);
-    }
-    .btn {
-      position: absolute;
-      font-family: "DM Serif Text", serif;    
-      font-size: 14px;
-      top: 40px;
-      left: 450px;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      border: none;
-      color: var(--btnFontColor);
-      background-color: var(--btnBg);
-    }
-    .btn:hover {
-      background-color: var(--CAMEL);
-      color: var(--CREAM);
-    }   
-        
-        .topnav {
-          overflow: hidden;
-          background-color: var(--espresso);
-        }
-        
-        .topnav a {
-          float: left;
-          color: var(--CREAM);
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-          font-family: "DM Serif Text", serif;
-          font-size: 17px;
-        }
-        
-        .topnav a:hover {
-            background-color: var(--CAMEL);
-            color: var(--CREAM);
-        }
-        
-        .topnav a.active {
-          background-color: var(--CAMEL);
-          color: var(--CREAM);
-        }
-        
-        .row {
-          display: flex;
-        }
-        
-        .column {
-          flex: 100%;
-        }
+  .row {
+    display: flex;
+  }
+  .column {
+    flex: 100%;
+  }
 
-/* Style the footer */
-.footer {
-  background-color:  var(--CAMEL);
-  padding: 10px;
-  text-align: center;
-}
+  .split {
+    height: 40%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
 
-/*work page split screen*/
-.split {
-  height: 40%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+  .left {
+    left: 0;
+    background-color: var(--bg);
+  }
 
-.left {
-  left: 0;
-  background-color: var(--bg);
-}
+  .right {
+    right: 0;
+    background-color: var(--bg);
+  }
 
-.right {
-  right: 0;
-  background-color: var(--bg);
-}
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
 
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-}
-
-.box {
-  width: 49%;
-  height: 60%;
-  border: none;
-  margin: 1px;
-  display: inline-block; 
-  text-align: center;
-  vertical-align: middle;
-  line-height: 200px; 
-}
-.box:hover {
-  fill-opacity: var(--HORCHATA);
-  color: burlywood;
-}
+  .box {
+    width: 49%;
+    height: 60%;
+    border: none;
+    margin: 1px;
+    display: inline-block; 
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px; 
+  }
+  .box:hover {
+    fill-opacity: var(--HORCHATA);
+    color: burlywood;
+  }
  
   a:hover {
     text-decoration: underline;
     color: var(--fontColor); 
     }
   
-    .resume-container {
-      width: 750px; 
-      height: 820px;
-      margin: 0 auto;
-      padding: 20px;
-      border-radius: 2px;
+  .resume-container {
+    width: 750px; 
+    height: 820px;
+    margin: 0;
+    padding: 20px;
+    border-radius: 2px;
+  }
+  .download-button {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background-color: green; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "DM Serif Text", serif;    
+    font-size: 22px;
+  }
+  .download-button:hover {
+    background-color: var(--CAMEL);
+    color: var(--CREAM);
+  }
+  object {
+    width: 100%;
+    height: 1000px;
+    border: none; 
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+  
+
+ /* =================================
+  WORK STYLES
+=================================== */
+
+  .link-wrapper {
+    display: flex;
+    flex-wrap: wrap;          /* allow wrapping */
+    justify-content: center;  /* center items */
+    gap: 20px;                /* space between circles */
+  }
+  @media (max-width: 500px) {
+    .link-wrapper {
+      flex-direction: column;
+      align-items: center;
     }
-    .download-button {
-      display: inline-block;
-      margin: 15px 0;
-      padding: 10px 20px;
-      background-color: var(--btnBg);
-      color: var(--btnFontColor);
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .download-button:hover {
-      background-color: var(--CAMEL);
-    }
-    object {
-      width: 100%;
-      height: 1000px;
-      border: none; 
-    }
+  }
+  .light-box {
+    background-color: var(--green);
+    padding: 16px;
+    margin: 0;
+    max-width: 300px;
+    border-radius: 8px;
+    align-items: left;
+    color: var(--CREAM);
+
+  }
+
+  .light-box ul {
+    padding-left: 2px;
+    margin: 0;
+  }
+  .circle-link {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    border-radius: 50%;
+    background-color: var(--wrkcircle);
+    color: var(--CREAM);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 1s ease, background-color .5s ease;
+    will-change: transform;
+    font-family: "DM Serif Text", serif;    
+    font-weight: 100;
+    font-style: normal; 
+    font-size: 40px; 
+    font-variant: normal;
+  }
+  
+  .circle-link:hover {
+    transform: translateY(-60px);
+    background-color: var(--wrkcrc-hover);
+    color: var(--CREAM);
+  }
+  
+    
