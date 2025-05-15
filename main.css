@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 
 /* =================================
    GLOBAL STYLES
@@ -29,7 +29,6 @@
 
   
   h2 {
-    background: var(--bg);
     color: var(--fontColor);
     font-family: "DM Serif Text", serif;    
     font-weight: 100;
@@ -290,7 +289,84 @@ ul li {
     text-align: center;
     padding: 20px;
   }
-  
+   /* =================================
+  INDEX STYLES
+=================================== */
+/* Hero section */
+.hero {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    background-image: url('code girl.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Content on top of the image */
+.hero-content-header {
+    position: relative; /* Ensure proper positioning */
+    color: var(--CREAM); /* Adjust text color for readability */
+    text-align: left; /* Align the text to the left */
+    font-family: "DM Serif Text", serif;
+    font-size: 120px;
+    text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.7); /* Add shadow to the text */
+    margin-bottom: 20px; /* Add spacing below the header */
+
+}
+.hero-content {
+    position: absolute;
+    top: 10%; /* Move the text to the upper part of the screen */
+    left: 5%; /* Align the text to the right side */
+    color: var(--CREAM); /* Adjust text color for readability */
+    text-align: left; /* Align the text to the left */
+    font-family: "DM Serif Text", serif;
+    max-width: 400px; /* Limit the width of the text box */
+
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 70vh; /* Reduce height for smaller screens */
+        background-size: contain; /* Ensure the image scales properly */
+    }
+
+    .hero-content {
+        top: 5%; /* Adjust position for smaller screens */
+        right: 2%; /* Add more padding from the edge */
+        max-width: 300px; /* Reduce the width of the text box */
+        font-size: 14px; /* Adjust font size for readability */
+    }
+}
+.box-link {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid var(--CREAM); /* Cream outline for the box */
+    border-radius: 0px; /* Sharp corners */
+    text-decoration: none; /* Remove underline */
+    color: var(--CREAM) !important; /* Use the cream color variable */
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;    
+    font-size: 18px;
+    text-align: center;
+    background-color: transparent; /* No background color */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+.box-links {
+    display: flex;
+    color: var(--CREAM);
+    justify-content: flex-start; /* Align boxes to the left */
+    gap: 20px; /* Space between the boxes */
+    margin-top: 10px; /* Add spacing from the header */
+    margin-left: 5%; /* Align with the header's left position */
+}
+
  /* =================================
   CONTACT STYLES
 =================================== */
