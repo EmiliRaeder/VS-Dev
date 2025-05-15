@@ -24,7 +24,9 @@
   font-style: normal; 
   font-variant: normal; 
   font-weight: 700; 
-  line-height: 26.4px; }
+  line-height: 26.4px; 
+  text-align: center; }
+
   
   h2 {
     background: var(--bg);
@@ -34,7 +36,8 @@
     font-style: normal; 
     font-size: 60px; 
     font-variant: normal; 
-    }
+    text-align: center;
+}
 
  body {
     background: var(--bg);
@@ -64,9 +67,16 @@
     text-align: center;
   }
 
-  li {
-    list-style: none;
-  }
+  ul {
+    list-style: none; /* Remove default bullet points */
+    margin: 0 auto; /* Center the list horizontally */
+    text-align: center; /* Center-align the text inside the list */
+}
+
+ul li {
+    display: inline-block; /* Make list items appear inline */
+    margin: 0 20px; /* Add spacing between list items */
+}
 
   .list {
     list-style: square;
@@ -136,8 +146,8 @@
   position: absolute;
   font-family: "DM Serif Text", serif;    
   font-size: 14px;
-  top: 40px;
-  left: 450px;
+  top: 45px;
+  left: 60px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -281,38 +291,46 @@
     padding: 20px;
   }
   
+ /* =================================
+  CONTACT STYLES
+=================================== */
+.light-box {
+    background-color: var(--bg); /* Use your theme's background color */
+    color: var(--fontColor); /* Use your theme's font color */
+    border: 2px solid var(--CAMEL); /* Add a border to define the card */
+    border-radius: 10px; /* Round the corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    padding: 20px; /* Add padding for spacing inside the card */
+    max-width: 400px; /* Limit the width for a card-like appearance */
+    margin: 20px auto; /* Center the card horizontally */
+    text-align: center; /* Center-align the text */
+    font-family: "DM Serif Text", serif; /* Use a professional font */
+}
+
+.light-box p {
+    margin: 10px 0; /* Add spacing between paragraphs */
+    font-size: 26px; /* Adjust font size for readability */
+}
+
+.light-box a {
+    color: var(--CAMEL); /* Use a highlight color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Make links stand out */
+}
+
+.light-box a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
 
  /* =================================
   WORK STYLES
 =================================== */
-
-  .link-wrapper {
-    display: flex;
-    flex-wrap: wrap;          /* allow wrapping */
-    justify-content: center;  /* center items */
-    gap: 20px;                /* space between circles */
-  }
   @media (max-width: 500px) {
     .link-wrapper {
       flex-direction: column;
       align-items: center;
     }
-  }
-  .light-box {
-    background-color: var(--green);
-    padding: 16px;
-    margin: 0;
-    max-width: 300px;
-    border-radius: 8px;
-    align-items: left;
-    color: var(--CREAM);
-
-  }
-
-  .light-box ul {
-    padding-left: 2px;
-    margin: 0;
-  }
+  } 
   .circle-link {
     width: 300px;
     height: 300px;
@@ -337,7 +355,71 @@
     background-color: var(--wrkcrc-hover);
     color: var(--CREAM);
   }
-  
- 
-  
-    
+
+/* Grid container for the squares */
+.link-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 3px; /* No spacing between squares */
+    width: 100%;
+    height: auto; /* Full screen height */
+}
+
+/* Individual square links */
+.square-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width of the container */
+    aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio to ensure squares */
+    background-color: var(--CAMEL); /* Default background color */
+    text-decoration: none; /* Remove underline */
+    overflow: hidden;
+    color: var(--CREAM); /* Default text color */
+    font-family: "DM Serif Text", serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Default text (visible by default) */
+.square-link .default-text {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    color: var(--CREAM)
+}
+
+/* Hover text (hidden by default) */
+.square-link .hover-text {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--CREAM);
+    font-size: 18px;
+}
+
+/* Hover state: Hide default text and show hover text */
+.square-link:hover .default-text {
+  opacity: 0;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.square-link:hover .hover-text {
+    opacity: 1;
+}
+@media screen and (max-width: 768px) {
+    .link-wrapper {
+        grid-template-columns: 1fr; /* Stack squares in a single column */
+        gap: 5px; /* Add a small gap between rows */
+    }
+
+    .square-link {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
