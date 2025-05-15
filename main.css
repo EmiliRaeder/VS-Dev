@@ -83,6 +83,23 @@
     background-color: var(--CAMEL);
     color: var(--CREAM);
   }
+  @media screen and (max-width: 768px) {
+    h1, h2 {
+        font-size: 24px; /* Scale down the font size for mobile */
+        text-align: center; /* Center-align the text */
+        padding: 10px; /* Add some padding for spacing */
+    }
+
+    .topnav a {
+        font-size: 14px; /* Reduce font size for navigation links */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .topnav {
+        flex-wrap: wrap; /* Allow navigation links to wrap */
+        justify-content: center; /* Center-align the links */
+    }
+}
 /* =================================
    DARK VS. LIGHT MODE
 =================================== */
