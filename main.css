@@ -145,7 +145,22 @@
   .column {
     flex: 100%;
   }
+@media screen and (max-width: 768px){
+    .row {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
 
+    .column {
+        width: 100%; /* Make columns take full width */
+        margin-bottom: 16px; /* Add spacing between items */
+    }
+
+    .column img {
+        max-width: 100%;
+    }  
+  }
   .split {
     height: 40%;
     width: 50%;
@@ -293,6 +308,6 @@
     color: var(--CREAM);
   }
   
-    
+ 
   
     
