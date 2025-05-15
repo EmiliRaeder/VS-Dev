@@ -44,7 +44,20 @@
     font-style: normal;
     font-size: 20px;
    }
-   
+  @media screen and (max-width: 768px) {
+    object, iframe {
+        width: 100%; /* Make the embedded document take full width */
+        height: auto; /* Adjust height proportionally */
+    }
+
+    .resume-container {
+        width: 100%; /* Ensure the container fits the screen */
+        padding: 10px; /* Add padding for spacing */
+    }
+}
+
+
+
  footer {
     background-color:  var(--CAMEL);
     padding: 10px;
@@ -85,7 +98,7 @@
   }
   @media screen and (max-width: 768px) {
     h1, h2 {
-        font-size: 24px; /* Scale down the font size for mobile */
+        font-size: 42px; /* Scale down the font size for mobile */
         text-align: center; /* Center-align the text */
         padding: 10px; /* Add some padding for spacing */
     }
