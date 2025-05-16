@@ -61,7 +61,7 @@
 
 
  footer {
-    background-color:  var(--CAMEL);
+    background-color:  var(--CREAM);
     padding: 10px;
     text-align: center;
   }
@@ -145,8 +145,8 @@ ul li {
   position: absolute;
   font-family: "DM Serif Text", serif;    
   font-size: 14px;
-  top: 45px;
-  left: 60px;
+  top: 70px;
+  left: 40px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -294,53 +294,75 @@ ul li {
 =================================== */
 /* Hero section */
 .hero {
+    min-height: 100vh;
     width: 100%;
-    height: 100vh; /* Full screen height */
     background-image: url('code girl.png');
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* top left */
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* Centered, large header */
+.hero-content-header {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
+    color: var(--CREAM);
+    font-family: "DM Serif Text", serif;
+    font-size: 160px;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.7);
+    text-align: center;
+    z-index: 1;
 
 }
-
-/* Content on top of the image */
-.hero-content-header {
-    position: relative; /* Ensure proper positioning */
-    color: var(--CREAM); /* Adjust text color for readability */
-    text-align: left; /* Align the text to the left */
-    font-family: "DM Serif Text", serif;
-    font-size: 120px;
-    text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.7); /* Add shadow to the text */
-    margin-bottom: 20px; /* Add spacing below the header */
-
+.center-hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.hero-content-header p {
+    margin: 0;
 }
 .hero-content {
-    position: absolute;
-    top: 10%; /* Move the text to the upper part of the screen */
-    left: 5%; /* Align the text to the right side */
-    color: var(--CREAM); /* Adjust text color for readability */
-    text-align: left; /* Align the text to the left */
-    font-family: "DM Serif Text", serif;
-    max-width: 400px; /* Limit the width of the text box */
+    position: relative;
+    top: 30px;         /* Pushes content down */
+    left: 60px;        /* Pushes content to the right */
+    max-width: 400px;
+    line-height: .5;
+    color: var(--CREAM);
+    font-family: "Rethink Sans", sans-serif;
+    font-size: 22px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
 
 }
+/* Center box links below header */
+.box-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    z-index: 1;
 
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
-    .hero {
-        height: 70vh; /* Reduce height for smaller screens */
-        background-size: contain; /* Ensure the image scales properly */
-    }
-
-    .hero-content {
-        top: 5%; /* Adjust position for smaller screens */
-        right: 2%; /* Add more padding from the edge */
-        max-width: 300px; /* Reduce the width of the text box */
-        font-size: 14px; /* Adjust font size for readability */
-    }
 }
 .box-link {
     display: inline-block;
@@ -348,25 +370,47 @@ ul li {
     border: 2px solid var(--CREAM); /* Cream outline for the box */
     border-radius: 0px; /* Sharp corners */
     text-decoration: none; /* Remove underline */
-    color: var(--CREAM) !important; /* Use the cream color variable */
+    color: var(--CREAM) !important;
     font-family: "Rethink Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;    
     font-size: 18px;
+    font-weight: 400;
     text-align: center;
     background-color: transparent; /* No background color */
     transition: all 0.3s ease-in-out; /* Smooth hover effect */
+    margin: 0 5px;
+    min-width: 120px;
 }
-.box-links {
-    display: flex;
-    color: var(--CREAM);
-    justify-content: flex-start; /* Align boxes to the left */
-    gap: 20px; /* Space between the boxes */
-    margin-top: 10px; /* Add spacing from the header */
-    margin-left: 5%; /* Align with the header's left position */
+    .box-link:hover {
+    background-color: none; /* Add cream background on hover */
+    color: var(--espresso); /* Change text color to espresso on hover */
 }
 
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .hero-content-header {
+        font-size: 36px;
+        padding: 0 10px;
+    }  
+  .hero-content-header p {
+        font-size: 36px;
+    }
+     .hero-content {
+        top: 20px;         /* Less down on mobile */
+        left: 10px;        /* Less to the right on mobile */
+        max-width: 95vw;
+        font-size: 16px;
+    }
+    .box-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .box-link {
+        width: 80%;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+}
  /* =================================
   CONTACT STYLES
 =================================== */
