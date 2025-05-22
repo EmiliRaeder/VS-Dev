@@ -34,6 +34,7 @@ function createNote() {
 
     div.innerHTML = newNoteHTML;
     Container.appendChild(div);
+    saveNotes();
 }
 
 function getSelectedText() {
@@ -56,6 +57,7 @@ function deleteNote(e) {
     if (conform) {
         e.parentElement.parentElement.remove();
     }
+    saveNotes();
 }
 
 
@@ -86,9 +88,10 @@ function loadNotes() {
             <div onclick="getSelectedStyle('underline')" class="underline">U</div>
             <div onclick="getSelectedStyle('lineThrough')" class="lineThrough">ab</div>
             <hr />
-            <img src="delete.png" onclick="DeleteNote(this)"/>
+            <img src="delete.png" onclick="deleteNote(this)"/>
         </div>
         `;
+        div.querySelector('.note-editor').innerHTML = content; // Set saved content
         Container.appendChild(div);
     });
 }
@@ -98,3 +101,4 @@ Container.addEventListener('input', function(e) {
         saveNotes();
     }
 });
+loadNotes();
