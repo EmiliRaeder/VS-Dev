@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* =================================
+   GLOBAL STYLES
+=================================== */
+:root {
+    --espresso: #3d2719;
+    --CREAM: #dad7cd;
+    --CAMEL: #523726;
+    --BROWN: #523726;
+    --HORCHATA: #b99883;
+    --white: #FFFFFF;
+    --black: #000000;
+    --bluegray: #8293AE;
+    --green: #65755F;
+
+  }
+  
+ h1 { 
+  background: var(--bg);
+  color: var(--fontColor);
+  font-family: Tahoma, Verdana, Segoe, sans-serif; 
+  font-size: 24px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  line-height: 26.4px; 
+  text-align: center; }
+
+  
+  h2 {
+    color: var(--CREAM);
+    font-family: "DM Serif Text", serif;    
+    font-weight: 100;
+    font-style: normal; 
+    font-size: 60px; 
+    font-variant: normal; 
+    text-align: center;
+    text-shadow: #3d2719 10px 10px 15px;
+    padding-left: 10%;
+}
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* top left */
+    justify-content: flex-start;
+    position: relative;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 20px; /* Add this line */
+
+}
+.addNote {
+  height: 100px;
+  background: #F5CF8F;
+  cursor: pointer;
+  margin: 10px;
+  padding: 0px;
+  border-radius: 50%;
+
+}
+
+.note-row {
+  background: #F5CF8F;
+  margin: 10px;
+  border-radius: 15px; /* Add this line */
+  overflow: hidden;    /* Optional for a cleaner look */
+}
+
+.note-editor {
+  height: 350px;
+  width: 250px;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.note-editor::-webkit-scrollbar {
+  display: none;
+}
+
+.note-controls {
+  height: 50px;
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid;
+}
+
+.note-controls div {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+  background: #eeeeee;
+  border-radius: 5px;
+  line-height: 30px;
+}
+
+.note-controls img {
+  height: 25px;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.lineThrough {
+  text-decoration: line-through;
+}

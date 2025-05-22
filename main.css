@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=DM+Serif+Text:ital@0;1&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 
 /* =================================
    GLOBAL STYLES
@@ -479,10 +479,8 @@ ul li {
 /* Grid container for the squares */
 .link-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 3px; /* No spacing between squares */
-    width: 100%;
-    height: auto; /* Full screen height */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Minimum 220px, max fills row */
+    gap: 5px;
 }
 
 /* Individual square links */
@@ -554,4 +552,30 @@ ul li {
     .square-link {
         font-size: 16px; /* Adjust font size for smaller screens */
     }
+}
+
+
+.pretty-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0 30px 0;
+  gap: 16px;
+}
+
+.pretty-divider hr {
+  flex: 1;
+  border: none;
+  border-top: 2px solid var(--fontColor);
+  margin: 0;
+}
+
+.pretty-divider span {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 40px;
+  color: var(--fontColor);
+  letter-spacing: 12px;
+  padding: 0px;
+  background: none; /* or your page background color */
+  border-radius: 8px;
 }
