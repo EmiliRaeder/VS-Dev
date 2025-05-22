@@ -1,29 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=DM+Serif+Text:ital@0;1&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=DM+Serif+Text:ital@0;1&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 /* =================================
    GLOBAL STYLES
 =================================== */
 :root {
     --espresso: #3d2719;
-    --CREAM: #dad7cd;
+    --CREAM: #F5F1E7;
     --CAMEL: #523726;
-    --BROWN: #523726;
     --HORCHATA: #b99883;
-    --white: #FFFFFF;
-    --black: #000000;
     --bluegray: #8293AE;
     --green: #65755F;
+    --BIGRED: #FD2525;
 
   }
   
  h1 { 
   background: var(--bg);
-  color: var(--fontColor);
-  font-family: Tahoma, Verdana, Segoe, sans-serif; 
-  font-size: 24px; 
-  font-style: normal; 
-  font-variant: normal; 
-  font-weight: 700; 
+  color: var(--wrkTitle);
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 150px; 
   line-height: 26.4px; 
   text-align: center; }
 
@@ -88,7 +85,7 @@ ul li {
   
   .topnav a {
     float: left;
-    color: #dad7cd;
+    color: var(--CREAM);
     text-align: center;
     padding: 16px;
     text-decoration: none;
@@ -132,6 +129,7 @@ ul li {
   --btnFontColor: var(--CREAM);
   --wrkcircle: var(--espresso);
   --wrkcrc-hover: var(--CAMEL);
+  --wrkTitle: var(--BIGRED);
 }
 .dark-theme {
   --bg: var(--espresso);
@@ -140,6 +138,8 @@ ul li {
   --btnFontColor: var(--espresso);
   --wrkcircle: var(--CAMEL);
   --wrkcrc-hover: var(--CAMEL);
+  --wrkTitle: var(--CREAM);
+
 }
 .btn {
   position: absolute;
@@ -445,118 +445,76 @@ ul li {
  /* =================================
   WORK STYLES
 =================================== */
-  @media (max-width: 500px) {
-    .link-wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
-  } 
-  .circle-link {
-    width: 300px;
-    height: 300px;
-    line-height: 300px;
-    border-radius: 50%;
-    background-color: var(--wrkcircle);
-    color: var(--CREAM);
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 1s ease, background-color .5s ease;
-    will-change: transform;
-    font-family: "DM Serif Text", serif;    
-    font-weight: 100;
-    font-style: normal; 
-    font-size: 40px; 
-    font-variant: normal;
-  }
-  
-  .circle-link:hover {
-    transform: translateY(-60px);
-    background-color: var(--wrkcrc-hover);
-    color: var(--CREAM);
-  }
+ 
+ 
 
-/* Grid container for the squares */
 .link-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
-    gap: 20px;
-    width: 100%;      /* Fill the width of the parent */
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Each box fills row */
+    gap: 5px;
+    width: 100%;
     margin: 0 auto;
 }
-
-/* Individual square links */
 .square-link {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    max-width: 300px;      /* Limit the maximum width */
-    background-color: var(--CAMEL);
+    min-height: 180px;
+    max-height: 260px;
+    aspect-ratio: 3/2;
+    background-color: none;
     text-decoration: none;
     overflow: hidden;
-    color: var(--CREAM);
-    font-family: "DM Serif Text", serif;
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0 auto;        /* Center squares in their grid cell */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Default text (visible by default) */
-.square-link .default-text {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-    color: var(--CREAM)
-}
-
-/* Hover text (hidden by default) */
-.square-link .hover-text {
+.square-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.square-link .hover-panel {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    font-family: "Nanum Myeongjo", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--CREAM);
-    font-size: 22px;
+    background:none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px; /* Add border padding */
-    box-sizing: border-box; /* Ensure padding is included in width/height */
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.square-link .hover-text {
+    color: var(--fontColor);
+    font-size: 12px;
+    font-family: Arial, sans-serif;
     text-align: center;
-    word-break: break-word; /* Wrap long words if needed */
-    overflow-wrap: break-word;
+    line-height: 1.4;
+    padding: 16px;
 }
 
-/* Hover state: Hide default text and show hover text */
-.square-link:hover .default-text {
-  opacity: 0;
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 400;
-  font-style: normal;
+.square-link:hover img {
+    opacity: 0;
 }
 
-.square-link:hover .hover-text {
+.square-link:hover .hover-panel {
     opacity: 1;
+    pointer-events: auto;
 }
-@media screen and (max-width: 768px) {
-    .link-wrapper {
-        grid-template-columns: 1fr; /* Stack squares in a single column */
-        gap: 5px; /* Add a small gap between rows */
-    }
-
-    .square-link {
-        font-size: 16px; /* Adjust font size for smaller screens */
-    }
-}
-
 
 .pretty-divider {
   display: flex;
@@ -582,3 +540,17 @@ ul li {
   background: none; /* or your page background color */
   border-radius: 8px;
 }
+
+
+@media screen and (max-width: 768px) {
+    .link-wrapper {
+        grid-template-columns: 1fr; /* Stack squares in a single column */
+        gap: 5px; /* Add a small gap between rows */
+        flex-direction: column;
+        align-items: center;
+    }
+    }
+
+    .square-link {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
