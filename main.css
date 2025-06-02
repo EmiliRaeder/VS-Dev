@@ -450,30 +450,40 @@ ul li {
 
 .link-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Each box fills row */
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+    gap: 35px;
     width: 100%;
     margin: 0 auto;
+    justify-content: center;
 }
+
 .square-link {
     position: relative;
     width: 100%;
     min-height: 180px;
     max-height: 260px;
-    aspect-ratio: 3/2;
-    background-color: none;
+    max-width: 300px;
+    aspect-ratio: 6/5;
+    background-color: var(--CREAM); /* Use a visible background */
     text-decoration: none;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: #3d2719 solid .1px;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 16px rgba(61, 39, 25, 18),   
+        0 1.5px 4px rgba(61, 39, 25, 10),  
+        0 0.5px 1px rgba(0,0,0,10);        
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .square-link img {
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: contain;
-    position: absolute;
+    position: center;
     top: 0;
     left: 0;
     z-index: 1;
@@ -496,16 +506,27 @@ ul li {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
+    overflow: hidden;
 }
 
 .square-link .hover-text {
     color: var(--fontColor);
+    flex-direction: column;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-align: center;
     line-height: 1.4;
-    padding: 16px;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 1.5vw, 20px); 
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .square-link:hover img {
@@ -538,7 +559,6 @@ ul li {
   color: var(--fontColor);
   letter-spacing: 12px;
   padding: 0px;
-  background: none; /* or your page background color */
   border-radius: 8px;
 }
 
@@ -555,3 +575,13 @@ ul li {
     .square-link {
         font-size: 16px; /* Adjust font size for smaller screens */
     }
+
+@media (hover: none) and (pointer: coarse) {
+  .square-link:active img {
+    opacity: 0;
+  }
+  .square-link:active .hover-panel {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
