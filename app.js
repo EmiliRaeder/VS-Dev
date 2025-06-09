@@ -95,3 +95,4 @@ function onMouseUp(event) {
 	path.fullySelected = false;
 	path.strokeColor = '#e4141b';
 }
+*/
