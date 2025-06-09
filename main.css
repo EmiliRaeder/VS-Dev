@@ -43,25 +43,21 @@
     font-style: normal;
     font-size: 20px;
    }
-  @media screen and (max-width: 768px) {
-    object, iframe {
-        width: 100%; /* Make the embedded document take full width */
-        height: auto; /* Adjust height proportionally */
-    }
 
-    .resume-container {
-        width: 100%; /* Ensure the container fits the screen */
-        padding: 10px; /* Add padding for spacing */
-    }
+
+
+.footer {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--CAMEL);
+  color: var(--CREAM);
+  text-align: center;
+  margin-top: 36px;
+  padding: 16px;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
 }
-
-
-
- footer {
-    background-color:  var(--CREAM);
-    padding: 10px;
-    text-align: center;
-  }
 
   ul {
     list-style: none; /* Remove default bullet points */
@@ -118,7 +114,26 @@ ul li {
         flex-wrap: wrap; /* Allow navigation links to wrap */
         justify-content: center; /* Center-align the links */
     }
+    .footer {
+        font-size: 20px; /* Scale down footer font size */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
 }
+/* =================================
+  CURSOR STYLES
+=================================== */
+#blob-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: filter 0.2s;
+}
+#blob-cursor svg {
+  display: block;
+}
+
 /* =================================
    DARK VS. LIGHT MODE
 =================================== */
@@ -443,12 +458,26 @@ ul li {
 }
 
  /* =================================
+  RESUME STYLES
+=================================== */
+
+  @media screen and (max-width: 768px) {
+    object, iframe {
+        width: 100%; /* Make the embedded document take full width */
+        height: auto; /* Adjust height proportionally */
+    }
+
+    .resume-container {
+        width: 100%; /* Ensure the container fits the screen */
+        padding: 10px; /* Add padding for spacing */
+    }
+}
+
+ /* =================================
   WORK STYLES
 =================================== */
  
- 
-
-.link-wrapper {
+ .link-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
     gap: 35px;
