@@ -14,6 +14,8 @@ switcher.addEventListener('click', function() {
     console.log('current class name: ' + className);
 });
 
+
+/*
 //Custom Cursor//
 
 // SVG Blob Cursor
@@ -48,6 +50,8 @@ function animateBlob() {
   requestAnimationFrame(animateBlob);
 }
 animateBlob();
+
+/*
 
 //paper.js lil snake//
 
