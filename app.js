@@ -14,6 +14,16 @@ switcher.addEventListener('click', function() {
     console.log('current class name: ' + className);
 });
 
+// for resume theme update
+function updateResumeTheme() {
+  const iframe = document.querySelector('iframe');
+  if (!iframe) return;
+  const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+  iframe.contentWindow.postMessage({theme}, '*');
+}
+document.querySelector('.btn').addEventListener('click', updateResumeTheme);
+window.addEventListener('DOMContentLoaded', updateResumeTheme);
+
 
 /*
 //Custom Cursor//

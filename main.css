@@ -22,7 +22,10 @@
   font-style: italic;
   font-size: 150px; 
   line-height: 26.4px; 
-  text-align: center; }
+  text-align: center; 
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
 
   
   h2 {
@@ -384,7 +387,7 @@ ul li {
     margin: 0 5px;
     min-width: 120px;
 }
-    .box-link:hover {
+.box-link:hover {
     background-color: none; /* Add cream background on hover */
     color: var(--espresso); /* Change text color to espresso on hover */
 }
@@ -430,41 +433,55 @@ ul li {
     text-align: center; /* Center-align the text */
     font-family: "DM Serif Text", serif; /* Use a professional font */
 }
-
 .light-box p {
     margin: 10px 0; /* Add spacing between paragraphs */
     font-size: 26px; /* Adjust font size for readability */
 }
-
 .light-box a {
     color: var(--CAMEL); /* Use a highlight color for links */
     text-decoration: none; /* Remove underline from links */
     font-weight: bold; /* Make links stand out */
 }
-
 .light-box a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
-
  /* =================================
   RESUME STYLES
 =================================== */
-  .resume-container {
+.resume-container h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 1;
+    /* Optionally adjust font-size or padding if needed */
+}
+.resume-container h1:first-child {
+    margin-bottom: 0;
+    line-height: .8;
+}
+.resume-container h1:last-child {
+    margin-top: 0;
+    padding-bottom: 5%; 
+} 
+
+.resume-container {
     width: 97%; 
-    height: 820px;
-    margin: 0;
-    padding: 20px;
+    margin: 4px 0 0 0;    /* Much smaller gap above the button */
+    padding: 12px 20px; 
     border-radius: 2px;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+
   }
   .download-button {
-    display: inline-block;
-    margin: 15px 0;
-    padding: 10px 20px;
-    background-color: green; 
-    color: white;
+    display: block;
+    width: 100%;
+    padding: 8px 8px;
+    background-color: var(--btnBg); 
+    color: var(--CREAM) !important;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
     font-family: "DM Serif Text", serif;    
     font-size: 22px;
   }
